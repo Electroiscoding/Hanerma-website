@@ -100,12 +100,12 @@
       z-index: 50;
       background: #ffffff;
       color: #000000;
-      padding: 12px 24px;
+      padding: 16px 32px;
       font-weight: bold;
       display: flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
     }
   </style>
 </head>
@@ -113,8 +113,8 @@
 
   <!-- GitHub Ribbon -->
   <a href="https://github.com/Xerv-Org/HANERMA" target="_blank" class="github-ribbon">
-    <i class="fab fa-github text-3xl"></i>
-    <span class="text-xl">Xerv-Org/HANERMA</span>
+    <i class="fab fa-github text-4xl"></i>
+    <span class="text-2xl">Xerv-Org/HANERMA</span>
   </a>
 
   <!-- Hero -->
@@ -134,6 +134,49 @@
     </div>
     <div class="absolute bottom-20 animate-bounce">
       <i class="fas fa-chevron-down text-6xl md:text-8xl"></i>
+    </div>
+  </section>
+
+  <!-- Verified Features -->
+  <section class="py-40 md:py-56 px-8 md:px-16">
+    <h2 class="text-7xl md:text-9xl lg:text-[160px] font-display font-black text-center mb-32 md:mb-48">Verified Features</h2>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-20 md:gap-32">
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Auto Mode (Classifier)</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Correctly chose direct for simple questions, reasoning for math, memory for recall</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Force Memory</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Always injected context, even on unrelated questions</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Force Reasoning</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Applied full atomic reasoning even to trivial math</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Force Both</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Combined memory + deep reasoning on every query</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Direct Mode</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Bypassed all overhead — fastest responses</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Per-Query Override</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Successfully forced modes on individual calls</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Memory Persistence</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Accurately recalled multiple facts across turns</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Save/Load Memory</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>JSON persistence worked — restored state correctly</p>
+      </div>
+      <div class="border-8 border-white p-16 md:p-24">
+        <h3 class="text-4xl md:text-6xl font-black mb-12 text-center">Internal Logging</h3>
+        <p class="text-xl md:text-2xl leading-relaxed text-center"><span class="text-green-400 font-bold">Perfect</span><br>Full transparency into every stage</p>
+      </div>
     </div>
   </section>
 
@@ -318,7 +361,7 @@ print(ai.ask("What was my previous question?"))</code>
       </div>
       <div class="border-t-6 border-white pt-20">
         <h3 class="text-4xl md:text-6xl font-black mb-12">Can I extend HANERMA for my experiments?</h3>
-        <p class="leading-relaxed">Yes — subclass and override any method. Add tools, custom reasoning, persistent storage, multi-agent systems. The core is deliberately minimal for maximum experimentation.</p>
+        <p class="leading-relaxed">Yes — subclass and override any method. Add tools, custom reasoning, persistent storage, multi-agent logic. The core is deliberately minimal for maximum experimentation.</p>
       </div>
       <div class="border-t-6 border-white pt-20">
         <h3 class="text-4xl md:text-6xl font-black mb-12">Is memory permanent across runs?</h3>
@@ -361,4 +404,4 @@ print(ai.ask("What was my previous question?"))</code>
   </script>
 
 </body>
-</html>
+              </html>
