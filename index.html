@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HANERMA — The Ultimate LLM Architecture</title>
+  <meta name="description" content="HANERMA: Perfect memory. Atomic reasoning. Calibrated confidence. The future of intelligent agents. Built by Xerv." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'system-ui'],
+            heading: ['Raleway', 'system-ui'],
+            display: ['"Science Gothic"', 'system-ui'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    pre {
+      position: relative;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: rgba(255,255,255,0.15);
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    pre:hover .copy-btn {
+      opacity: 1;
+    }
+    .copied {
+      position: absolute;
+      top: 80px;
+      right: 16px;
+      background: rgba(255,255,255,0.9);
+      color: black;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    .copied.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-8 md:px-16 relative overflow-hidden">
+    <h1 class="text-7xl md:text-9xl lg:text-[200px] font-display font-black tracking-tighter mb-12 leading-none">HANERMA</h1>
+    <p class="text-3xl md:text-5xl lg:text-6xl font-heading mb-16 max-w-6xl">Hierarchical Atomic Nested External Reasoning & Memory Architecture</p>
+    <p class="text-xl md:text-3xl lg:text-4xl mb-24 max-w-5xl leading-relaxed px-4">Perfect long-term memory. Atomic-verified reasoning. Calibrated confidence. The ultimate open-source LLM framework.</p>
+    <p class="text-lg md:text-2xl mb-32">Built by <a href="https://xerv.netlify.app" class="underline font-bold hover:no-underline">Xerv</a></p>
+    <div class="flex flex-col md:flex-row gap-12 md:gap-16">
+      <a href="#install" class="px-16 py-8 md:px-20 md:py-10 bg-white text-black text-2xl md:text-3xl font-black rounded-none hover:opacity-80 transition flex items-center justify-center gap-6">
+        <i class="fas fa-terminal text-3xl md:text-4xl"></i> pip install hanerma
+      </a>
+      <a href="#usage" class="px-16 py-8 md:px-20 md:py-10 border-6 md:border-8 border-white text-white text-2xl md:text-3xl font-black rounded-none hover:bg-white hover:text-black transition flex items-center justify-center gap-6">
+        <i class="fas fa-book text-3xl md:text-4xl"></i> Documentation
+      </a>
+    </div>
+    <div class="absolute bottom-12 md:bottom-20 animate-bounce">
+      <i class="fas fa-chevron-down text-5xl md:text-7xl"></i>
+    </div>
+  </section>
+
+  <!-- Comparison with LangChain -->
+  <section class="py-32 md:py-48 px-8 md:px-16">
+    <h2 class="text-6xl md:text-8xl lg:text-9xl font-display font-black text-center mb-24 md:mb-40">HANERMA vs LangChain</h2>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 md:gap-32">
+        <div class="border-6 md:border-8 border-white p-12 md:p-20">
+          <h3 class="text-5xl md:text-6xl font-black mb-12 md:mb-16 text-center">HANERMA</h3>
+          <ul class="space-y-8 md:space-y-12 text-lg md:text-2xl">
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-check text-3xl md:text-4xl mt-1"></i> Built-in perfect long-term memory</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-check text-3xl md:text-4xl mt-1"></i> Atomic nested reasoning with verification</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-check text-3xl md:text-4xl mt-1"></i> Intelligent zero-shot routing</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-check text-3xl md:text-4xl mt-1"></i> Native confidence calibration</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-check text-3xl md:text-4xl mt-1"></i> Minimal, stupid-easy API</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-check text-3xl md:text-4xl mt-1"></i> Single-purpose, lightweight</li>
+          </ul>
+        </div>
+        <div class="border-6 md:border-8 border-white p-12 md:p-20">
+          <h3 class="text-5xl md:text-6xl font-black mb-12 md:mb-16 text-center">LangChain</h3>
+          <ul class="space-y-8 md:space-y-12 text-lg md:text-2xl">
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-times text-3xl md:text-4xl mt-1 opacity-50"></i> Memory requires complex setup</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-times text-3xl md:text-4xl mt-1 opacity-50"></i> Reasoning chains manual & verbose</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-times text-3xl md:text-4xl mt-1 opacity-50"></i> No built-in routing intelligence</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-times text-3xl md:text-4xl mt-1 opacity-50"></i> Confidence not native</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-times text-3xl md:text-4xl mt-1 opacity-50"></i> Heavy, complex API surface</li>
+            <li class="flex items-start gap-6 md:gap-8"><i class="fas fa-times text-3xl md:text-4xl mt-1 opacity-50"></i> Many dependencies</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-2xl md:text-3xl text-center mt-32 md:mt-48 px-8">HANERMA is purpose-built for core intelligence with zero overhead. LangChain excels at complex tool orchestration — choose HANERMA when you want reliability and simplicity out of the box.</p>
+    </div>
+  </section>
+
+  <!-- Extensibility & Experiments -->
+  <section class="py-32 md:py-48 px-8 md:px-16 bg-black">
+    <h2 class="text-6xl md:text-8xl lg:text-9xl font-display font-black text-center mb-24 md:mb-40">Extend & Experiment</h2>
+    <div class="max-w-6xl mx-auto">
+      <p class="text-2xl md:text-3xl text-center mb-24 leading-relaxed">HANERMA is intentionally minimal and fully overridable — perfect for experimentation and custom agents.</p>
+      <div class="grid md:grid-cols-3 gap-16 md:gap-24">
+        <div class="border-6 md:border-8 border-white p-12 md:p-16">
+          <i class="fas fa-plug text-7xl md:text-9xl mb-12"></i>
+          <h3 class="text-4xl md:text-5xl font-black mb-8">Add Tools</h3>
+          <pre class="bg-black border-4 border-white p-8 text-base md:text-lg relative">
+            <code>class MyAgent(HANERMA):
+    def search_web(self, query):
+        # your web search logic
+        return result
+
+    def ask(self, prompt):
+        if "search" in prompt.lower():
+            return self.search_web(prompt)
+        return super().ask(prompt)</code>
+            <button class="copy-btn"><i class="fas fa-copy text-2xl"></i></button>
+            <div class="copied">Copied!</div>
+          </pre>
+        </div>
+        <div class="border-6 md:border-8 border-white p-12 md:p-16">
+          <i class="fas fa-brain text-7xl md:text-9xl mb-12"></i>
+          <h3 class="text-4xl md:text-5xl font-black mb-8">Custom Reasoning</h3>
+          <pre class="bg-black border-4 border-white p-8 text-base md:text-lg relative">
+            <code>class TreeOfThought(HANERMA):
+    def _reasoning(self, prompt):
+        # Implement Tree of Thought
+        return custom_tot(prompt)</code>
+            <button class="copy-btn"><i class="fas fa-copy text-2xl"></i></button>
+            <div class="copied">Copied!</div>
+          </pre>
+        </div>
+        <div class="border-6 md:border-8 border-white p-12 md:p-16">
+          <i class="fas fa-database text-7xl md:text-9xl mb-12"></i>
+          <h3 class="text-4xl md:text-5xl font-black mb-8">Persistent Memory</h3>
+          <pre class="bg-black border-4 border-white p-8 text-base md:text-lg relative">
+            <code>import json
+# Save
+with open("memory.json", "w") as f:
+    json.dump(ai.memory_store, f)
+
+# Load
+with open("memory.json") as f:
+    ai.memory_store = json.load(f)</code>
+            <button class="copy-btn"><i class="fas fa-copy text-2xl"></i></button>
+            <div class="copied">Copied!</div>
+          </pre>
+        </div>
+      </div>
+      <p class="text-2xl md:text-3xl text-center mt-32">Subclass HANERMA and override any method. Build multi-agent systems, add tools, change routing — the core stays rock-solid while you innovate.</p>
+    </div>
+  </section>
+
+  <!-- Core Architecture -->
+  <section class="py-32 md:py-48 px-8 md:px-16">
+    <h2 class="text-6xl md:text-8xl lg:text-9xl font-display font-black text-center mb-24 md:mb-40">Core Architecture</h2>
+    <div class="grid lg:grid-cols-4 gap-16 md:gap-24 max-w-7xl mx-auto">
+      <div class="text-center">
+        <i class="fas fa-brain text-8xl md:text-10xl mb-12 md:mb-16"></i>
+        <h3 class="text-4xl md:text-5xl font-black mb-8">Atomic Reasoning</h3>
+        <p class="text-lg md:text-2xl leading-relaxed">Decomposes into smallest verifiable atoms with bottom-up synthesis and cross-consistency.</p>
+      </div>
+      <div class="text-center">
+        <i class="fas fa-database text-8xl md:text-10xl mb-12 md:mb-16"></i>
+        <h3 class="text-4xl md:text-5xl font-black mb-8">External Memory</h3>
+        <p class="text-lg md:text-2xl leading-relaxed">Real embeddings for unlimited conversation history recall.</p>
+      </div>
+      <div class="text-center">
+        <i class="fas fa-project-diagram text-8xl md:text-10xl mb-12 md:mb-16"></i>
+        <h3 class="text-4xl md:text-5xl font-black mb-8">Intelligent Routing</h3>
+        <p class="text-lg md:text-2xl leading-relaxed">Zero-shot classifier picks optimal path automatically.</p>
+      </div>
+      <div class="text-center">
+        <i class="fas fa-shield-alt text-8xl md:text-10xl mb-12 md:mb-16"></i>
+        <h3 class="text-4xl md:text-5xl font-black mb-8">Calibrated Confidence</h3>
+        <p class="text-lg md:text-2xl leading-relaxed">Every answer ends with accurate Confidence: X%.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation -->
+  <section class="py-32 md:py-48 px-8 md:px-16 bg-black">
+    <h2 class="text-6xl md:text-8xl lg:text-9xl font-display font-black text-center mb-24 md:mb-40">Installation</h2>
+    <div class="max-w-4xl mx-auto text-center">
+      <pre class="bg-white text-black p-16 md:p-20 text-3xl md:text-4xl rounded-none inline-block relative">
+        <code>pip install hanerma</code>
+        <button class="copy-btn"><i class="fas fa-copy text-4xl"></i></button>
+        <div class="copied">Copied!</div>
+      </pre>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="py-32 md:py-48 px-8 md:px-16">
+    <h2 class="text-6xl md:text-8xl lg:text-9xl font-display font-black text-center mb-24 md:mb-40">Usage</h2>
+    <div class="max-w-5xl mx-auto space-y-32 md:space-y-48">
+      <div class="border-t-6 md:border-t-8 border-white pt-16 md:pt-24">
+        <h3 class="text-5xl md:text-6xl font-black mb-12 md:mb-16 text-center flex items-center justify-center gap-8 md:gap-12">
+          <i class="fas fa-key text-6xl md:text-7xl"></i> Direct API Key
+        </h3>
+        <pre class="bg-black border-6 md:border-8 border-white p-16 md:p-20 text-xl md:text-2xl relative">
+          <code>from hanerma import HANERMA
+
+ai = HANERMA(api_key="sk-or-your-key", model="any-openrouter-model")
+
+print(ai.ask("Your question"))</code>
+          <button class="copy-btn"><i class="fas fa-copy text-3xl md:text-4xl"></i></button>
+          <div class="copied">Copied!</div>
+        </pre>
+      </div>
+
+      <div class="border-t-6 md:border-t-8 border-white pt-16 md:pt-24">
+        <h3 class="text-5xl md:text-6xl font-black mb-12 md:mb-16 text-center flex items-center justify-center gap-8 md:gap-12">
+          <i class="fas fa-cog text-6xl md:text-7xl"></i> Environment Variable
+        </h3>
+        <pre class="bg-black border-6 md:border-8 border-white p-16 md:p-20 text-xl md:text-2xl relative">
+          <code>import os
+os.environ["OPENROUTER_API_KEY"] = "sk-or-your-key"
+
+from hanerma import HANERMA
+ai = HANERMA(model="meta-llama/llama-3.1-70b")
+
+print(ai.ask("Question"))
+print(ai.ask("What was my previous question?"))</code>
+          <button class="copy-btn"><i class="fas fa-copy text-3xl md:text-4xl"></i></button>
+          <div class="copied">Copied!</div>
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-32 md:py-48 px-8 md:px-16 bg-black">
+    <h2 class="text-6xl md:text-8xl lg:text-9xl font-display font-black text-center mb-24 md:mb-40">FAQ</h2>
+    <div class="max-w-5xl mx-auto space-y-24 md:space-y-32 text-xl md:text-2xl">
+      <div class="border-t-4 md:border-t-6 border-white pt-12 md:pt-16">
+        <h3 class="text-4xl md:text-5xl font-black mb-8">What makes HANERMA different from LangChain?</h3>
+        <p class="leading-relaxed">HANERMA is laser-focused on core intelligence (memory, reasoning, routing, calibration) with minimal code. LangChain is powerful for complex tool chains but requires heavy configuration.</p>
+      </div>
+      <div class="border-t-4 md:border-t-6 border-white pt-12 md:pt-16">
+        <h3 class="text-4xl md:text-5xl font-black mb-8">Can I extend HANERMA for my experiments?</h3>
+        <p class="leading-relaxed">Yes — subclass and override any method. Add tools, custom reasoning, persistent storage, multi-agent logic. The core is deliberately minimal for maximum experimentation.</p>
+      </div>
+      <div class="border-t-4 md:border-t-6 border-white pt-12 md:pt-16">
+        <h3 class="text-4xl md:text-5xl font-black mb-8">Is memory permanent across runs?</h3>
+        <p class="leading-relaxed">In-memory during instance lifetime. Save/load memory_store to JSON or vector DB for persistence.</p>
+      </div>
+      <div class="border-t-4 md:border-t-6 border-white pt-12 md:pt-16">
+        <h3 class="text-4xl md:text-5xl font-black mb-8">Can I see internal logs?</h3>
+        <p class="leading-relaxed">Yes — ai.logs provides full transparency into classifier, memory, and reasoning stages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-32 md:py-40 px-8 md:px-16 border-t-6 md:border-t-8 border-white">
+    <div class="text-center">
+      <p class="text-6xl md:text-7xl font-display font-black mb-12">HANERMA</p>
+      <p class="text-2xl md:text-3xl mb-20">Open Source • MIT License • Built by <a href="https://xerv.netlify.app" class="underline font-bold hover:no-underline">Xerv</a></p>
+      <div class="flex justify-center gap-16 md:gap-20 text-5xl md:text-6xl mb-24">
+        <a href="https://github.com" class="hover:opacity-70 transition"><i class="fab fa-github"></i></a>
+        <a href="https://pypi.org/project/hanerma" class="hover:opacity-70 transition"><i class="fas fa-box"></i></a>
+        <a href="https://xerv.netlify.app" class="hover:opacity-70 transition"><i class="fas fa-globe"></i></a>
+      </div>
+      <p class="text-base md:text-lg">© 2025 Xerv. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Copy Functionality -->
+  <script>
+    document.querySelectorAll('pre').forEach(pre => {
+      const button = pre.querySelector('.copy-btn');
+      const code = pre.querySelector('code').innerText;
+      const feedback = pre.querySelector('.copied');
+
+      button.addEventListener('click', async () => {
+        await navigator.clipboard.writeText(code);
+        feedback.classList.add('show');
+        setTimeout(() => feedback.classList.remove('show'), 2000);
+      });
+    });
+  </script>
+
+</body>
+</html>
