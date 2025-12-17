@@ -107,6 +107,20 @@
       gap: 16px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.6);
     }
+    /* Fixed Hero Section - Removed overlapping gradient */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background-color: #000000;
+    }
+    .hero-section::before {
+      content: none; /* Removed the overlay gradient that was causing blackish tint */
+    }
   </style>
 </head>
 <body class="font-sans antialiased">
@@ -117,12 +131,11 @@
     <span class="text-2xl">Xerv-Org/HANERMA</span>
   </a>
 
-  <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-8 md:px-16 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-black opacity-90"></div>
+  <!-- Fixed Hero Section -->
+  <section class="hero-section">
     <h1 class="text-8xl md:text-9xl lg:text-[220px] font-display font-black tracking-tighter mb-16 leading-none">HANERMA</h1>
-    <p class="text-3xl md:text-5xl lg:text-6xl font-heading mb-20 max-w-6xl">Hierarchical Atomic Nested External Reasoning & Memory Architecture</p>
-    <p class="text-xl md:text-3xl lg:text-4xl mb-28 max-w-5xl leading-relaxed px-4">Perfect long-term memory. Atomic-verified reasoning. Intelligent routing. Calibrated confidence. The definitive open-source framework for reliable AI agents.</p>
+    <p class="text-3xl md:text-5xl lg:text-6xl font-heading mb-20 max-w-6xl text-center">Hierarchical Atomic Nested External Reasoning & Memory Architecture</p>
+    <p class="text-xl md:text-3xl lg:text-4xl mb-28 max-w-5xl leading-relaxed text-center px-4">Perfect long-term memory. Atomic-verified reasoning. Intelligent routing. Calibrated confidence. The definitive open-source framework for reliable AI agents.</p>
     <p class="text-lg md:text-2xl mb-32">Built by <a href="https://xerv.netlify.app" class="underline font-bold hover:no-underline">Xerv</a></p>
     <div class="flex flex-col md:flex-row gap-16 mb-20">
       <a href="#install" class="px-20 py-10 bg-white text-black text-2xl md:text-3xl font-black rounded-none hover:opacity-80 transition flex items-center justify-center gap-8">
@@ -132,7 +145,7 @@
         <i class="fab fa-github text-3xl md:text-4xl"></i> View on GitHub
       </a>
     </div>
-    <div class="absolute bottom-20 animate-bounce">
+    <div class="absolute bottom-20 animate-bounce left-1/2 -translate-x-1/2">
       <i class="fas fa-chevron-down text-6xl md:text-8xl"></i>
     </div>
   </section>
@@ -180,6 +193,7 @@
     </div>
   </section>
 
+  <!-- Rest of the sections remain exactly the same as previous version -->
   <!-- Comparison with LangChain -->
   <section class="py-40 md:py-56 px-8 md:px-16">
     <h2 class="text-7xl md:text-9xl lg:text-[160px] font-display font-black text-center mb-32 md:mb-48">HANERMA vs LangChain</h2>
@@ -404,4 +418,4 @@ print(ai.ask("What was my previous question?"))</code>
   </script>
 
 </body>
-              </html>
+          </html>
